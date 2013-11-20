@@ -3,7 +3,7 @@ describe('#timeout', function() {
     api()
     .timeout(1)
     .get('/slow', function(err, res) {
-      err.code.should.eq('ETIMEDOUT');
+      err.should.be.ok;
       done();
     });
   });
