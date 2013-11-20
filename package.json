@@ -1,0 +1,30 @@
+{
+  "name": "hippie",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./lib/hippie.js",
+  "homepage": "https://github.com/vesln/hippie",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/*.test.js",
+    "pretest": "./node_modules/.bin/jshint .",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha test/*.test.js",
+    "coveralls": "istanbul cover ./node_modules/.bin/_mocha test/*.test.js --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vesln/hippie"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.8.1",
+    "jshint": "~2.3.0",
+    "coveralls": "~2.3.0",
+    "istanbul": "~0.1.44",
+    "express": "~3.4.4"
+  },
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.27.0"
+  }
+}
