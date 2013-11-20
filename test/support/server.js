@@ -24,6 +24,10 @@ app.patch('/patch', function(req, res) {
   res.send('PATCH');
 });
 
+app.get('/header', function(req, res) {
+  res.send(req.header('x-custom'));
+});
+
 /**
  * Primary export.
  */
