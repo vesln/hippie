@@ -7,7 +7,7 @@
 
 ## Synopsis
 
-Elegant end-to-end testing for APIs.
+Elegant end-to-end testing for web APIs.
 
 ## Features
 
@@ -17,21 +17,18 @@ Elegant end-to-end testing for APIs.
 var api = require('hippie');
 
 api()
-.json()
-.xml()
 .before(function(next) {})
 .after(function(next) {})
+
+.json()
+.xml()
 .header('Content-Type', 'application/json')
 .qs({ foo: 'bar' })
 .data({ foo: 'bar' })
 .auth({ user: 'foo', pass: '123' })
 .pipe(stream)
 .cookie()
-.base('http://google.com')
-.get('/foo')
-.post('/foo')
-.put('/foo')
-.del('/foo')
+
 .key('users.0.id', 1)
 .body(/foo/)
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
