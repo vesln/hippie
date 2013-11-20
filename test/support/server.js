@@ -12,6 +12,10 @@ app.get('/header', function(req, res) {
   res.send(req.header('x-custom'));
 });
 
+app.get('/qs', function(req, res) {
+  res.send(JSON.stringify(req.query));
+});
+
 app.get('/slow', function() {});
 
 /**

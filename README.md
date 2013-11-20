@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/vesln/hippie/badge.png?branch=master)](https://coveralls.io/r/vesln/hippie?branch=master)
 [![Code Climate](https://codeclimate.com/github/vesln/hippie.png)](https://codeclimate.com/github/vesln/hippie)
 
+
 ![hippie](http://i.imgur.com/ZEkuNZG.png)
 
 ## Synopsis
@@ -22,8 +23,6 @@ api()
 
 .json()
 .xml()
-.header('Content-Type', 'application/json')
-.qs({ foo: 'bar' })
 .data({ foo: 'bar' })
 .auth({ user: 'foo', pass: '123' })
 .pipe(stream)
@@ -33,7 +32,6 @@ api()
 .body(/foo/)
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
 .status(200)
-.timeout(4000)
 .expect(function(res, next) {
   // assert stuff
   next(err);
