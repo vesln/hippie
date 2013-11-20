@@ -12,6 +12,8 @@ app.get('/header', function(req, res) {
   res.send(req.header('x-custom'));
 });
 
+app.get('/slow', function() {});
+
 /**
  * Primary export.
  */
