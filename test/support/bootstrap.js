@@ -9,6 +9,7 @@ var chai = require('chai');
  */
 
 var server = require('./server');
+var hippie = require('../..');
 
 /**
  * Register `should`.
@@ -20,7 +21,10 @@ global.should = chai.should();
  * Export `api`.
  */
 
-global.api = require('../..');
+global.api = function() {
+  return hippie()
+    .base('http://localhost:' + server.PORT);
+};
 
 /**
  * Include stack traces.
