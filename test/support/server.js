@@ -16,6 +16,10 @@ app.del('/del', function(req, res) {
   res.send('DELETE');
 });
 
+app.put('/put', function(req, res) {
+  res.send('PUT');
+});
+
 /**
  * Primary export.
  */
