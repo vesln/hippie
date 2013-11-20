@@ -20,6 +20,10 @@ app.put('/put', function(req, res) {
   res.send('PUT');
 });
 
+app.patch('/patch', function(req, res) {
+  res.send('PATCH');
+});
+
 /**
  * Primary export.
  */
