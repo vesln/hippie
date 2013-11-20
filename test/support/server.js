@@ -13,3 +13,9 @@ app.get('/get', function(req, res){
  */
 
 module.exports = app;
+
+/**
+ * Export the configured port.
+ */
+
+module.exports.PORT = process.env.HIPPIE_PORT || 7891;

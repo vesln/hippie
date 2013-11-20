@@ -11,12 +11,6 @@ var chai = require('chai');
 var server = require('./server');
 
 /**
- * Port for the test server.
- */
-
-var port = process.env.HIPPIE_PORT || 7891;
-
-/**
  * Register `should`.
  */
 
@@ -38,4 +32,4 @@ chai.Assertion.includeStack = true;
  * Fire up the HTTP server.
  */
 
-server.listen(port);
+server.listen(server.PORT);
