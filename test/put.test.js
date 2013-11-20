@@ -1,7 +1,7 @@
 describe('#put', function() {
   it('performs a PUT request', function(done) {
     api()
-    .put('/put')
+    .put('/method')
     .end(function(err, res) {
       should.not.exist(err);
       res.body.should.eq('PUT');
@@ -11,7 +11,7 @@ describe('#put', function() {
 
   it('can perform the test without calling `end`', function(done) {
     api()
-    .put('/put', function(err, res) {
+    .put('/method', function(err, res) {
       should.not.exist(err);
       res.body.should.eq('PUT');
       done();

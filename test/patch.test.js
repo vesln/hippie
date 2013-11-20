@@ -1,7 +1,7 @@
 describe('#patch', function() {
   it('performs a PATCH request', function(done) {
     api()
-    .patch('/patch')
+    .patch('/method')
     .end(function(err, res) {
       should.not.exist(err);
       res.body.should.eq('PATCH');
@@ -11,7 +11,7 @@ describe('#patch', function() {
 
   it('can perform the test without calling `end`', function(done) {
     api()
-    .patch('/patch', function(err, res) {
+    .patch('/method', function(err, res) {
       should.not.exist(err);
       res.body.should.eq('PATCH');
       done();

@@ -1,7 +1,7 @@
 describe('#get', function() {
   it('performs a GET request', function(done) {
     api()
-    .get('/get')
+    .get('/method')
     .end(function(err, res) {
       should.not.exist(err);
       res.body.should.eq('GET');
@@ -11,7 +11,7 @@ describe('#get', function() {
 
   it('can perform the test without calling `end`', function(done) {
     api()
-    .get('/get', function(err, res) {
+    .get('/method', function(err, res) {
       should.not.exist(err);
       res.body.should.eq('GET');
       done();
