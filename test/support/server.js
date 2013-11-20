@@ -4,8 +4,12 @@
 
 var app = require('express')();
 
-app.get('/get', function(req, res){
+app.get('/get', function(req, res) {
   res.send('GET');
+});
+
+app.post('/post', function(req, res) {
+  res.send('POST');
 });
 
 /**
