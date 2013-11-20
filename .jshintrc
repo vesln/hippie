@@ -1,5 +1,6 @@
 {
   "supernew": true,
   "sub": true,
-  "laxbreak": true
+  "laxbreak": true,
+  "expr": true
 }
