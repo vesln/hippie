@@ -12,6 +12,10 @@ app.post('/post', function(req, res) {
   res.send('POST');
 });
 
+app.del('/del', function(req, res) {
+  res.send('DELETE');
+});
+
 /**
  * Primary export.
  */
