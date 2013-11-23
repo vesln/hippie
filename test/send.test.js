@@ -3,6 +3,7 @@ describe('#send', function() {
     var data = { foo: 'bar' };
 
     api()
+    .form()
     .send(data)
     .post('/send-form')
     .end(function(err, res) {
