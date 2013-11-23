@@ -18,23 +18,30 @@ Elegant end-to-end testing for web APIs.
 var api = require('hippie');
 
 api()
-.before(function(next) {})
-.after(function(next) {})
 
-.xml()
+.use(function(next {})
 
 .auth({ user: 'foo', pass: '123' })
 .pipe(stream)
 .cookie()
 
-.key('users.0.id', 1)
-.body(/foo/)
+.parser(function(data) {
+  return data;
+})
+
+.expectBody(/foo/)
+.expectBody({ foo: 'bar' })
+.expectBody('foo')
+
+.expectKey('users.0.id', 1)
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
-.status(200)
+.expectStatus(200)
+
 .expect(function(res, next) {
   // assert stuff
   next(err);
 })
+
 .end(function(err, res) {
   // win!
 });
