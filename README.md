@@ -26,8 +26,6 @@ var api = require('hippie');
 
 api()
 
-.use(function(next {})
-
 .parser(function(data) {
   return data;
 })
