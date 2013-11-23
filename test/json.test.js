@@ -21,4 +21,11 @@ describe('#json', function() {
       done();
     });
   });
+
+  it('works fine when there is no data', function(done) {
+    api()
+    .json()
+    .get('/method')
+    .end(done);
+  });
 });
