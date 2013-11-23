@@ -5,6 +5,7 @@ describe('#serializer', function() {
     .serializer(function(data) {
       return JSON.stringify(data);
     })
-    .get('/send-json', done);
+    .send({ foo: 'bar' })
+    .post('/send-json', done);
   });
 });

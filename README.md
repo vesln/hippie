@@ -13,7 +13,7 @@ Thin request wrapper that enables powerful and intuitive API testing.
 ## Features
 
 * Intuitive and consistent API
-* Built-in expectations
+* Built-in and custom expectations
 * Support for custom parsers and serializers
 * Easy to extend
 * Middlewares
@@ -25,10 +25,6 @@ Thin request wrapper that enables powerful and intuitive API testing.
 var api = require('hippie');
 
 api()
-
-.parser(function(data) {
-  return data;
-})
 
 .expectBody(/foo/)
 .expectBody({ foo: 'bar' })

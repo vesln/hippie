@@ -25,7 +25,7 @@ describe('#json', function() {
   it('works fine when there is no data', function(done) {
     api()
     .json()
-    .get('/method')
+    .post('/send-json')
     .end(done);
   });
 });
