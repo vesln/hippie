@@ -21,7 +21,6 @@ api()
 .before(function(next) {})
 .after(function(next) {})
 
-.json()
 .xml()
 .data({ foo: 'bar' })
 .auth({ user: 'foo', pass: '123' })
