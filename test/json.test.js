@@ -3,7 +3,7 @@ describe('#json', function() {
     api()
     .json()
     .opts(function(options) {
-      options.headers['Content-Type'].should.eq('application/json');
+      options.headers['Content-Type'].should.eq('application/json; charset=utf-8');
       options.headers['Accept'].should.eq('application/json');
       done();
     });
