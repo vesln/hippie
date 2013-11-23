@@ -33,6 +33,12 @@ global.api = function() {
 chai.Assertion.includeStack = true;
 
 /**
+ * Do not show diffs.
+ */
+
+chai.Assertion.showDiff = false;
+
+/**
  * Fire up the HTTP server.
  */
 
