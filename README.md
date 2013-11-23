@@ -22,7 +22,6 @@ api()
 .after(function(next) {})
 
 .xml()
-.data({ foo: 'bar' })
 
 .auth({ user: 'foo', pass: '123' })
 .pipe(stream)

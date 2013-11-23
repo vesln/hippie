@@ -8,4 +8,17 @@ describe('#json', function() {
       done();
     });
   });
+
+  it('converts the data to JSON', function(done) {
+    var data = { foo: 'bar' };
+
+    api()
+    .json()
+    .post('/send-json')
+    .send(data)
+    .end(function(err, res) {
+      res.body.should.eq(JSON.stringify(data));
+      done();
+    });
+  });
 });

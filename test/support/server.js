@@ -5,8 +5,6 @@
 var express = require('express');
 
 var app = express();
-app.use(express.json());
-app.use(express.urlencoded());
 
 app.all('/method', function(req, res) {
   res.send(req.method);
@@ -22,7 +20,11 @@ app.get('/qs', function(req, res) {
 
 app.get('/slow', function() {});
 
-app.post('/send-form', function(req, res) {
+app.post('/send-form', [express.urlencoded()], function(req, res) {
+  res.send(JSON.stringify(req.body));
+});
+
+app.post('/send-json', [express.json()], function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
