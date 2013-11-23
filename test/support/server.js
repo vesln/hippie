@@ -2,7 +2,11 @@
  * External dependencies.
  */
 
-var app = require('express')();
+var express = require('express');
+
+var app = express();
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.all('/method', function(req, res) {
   res.send(req.method);
@@ -17,6 +21,10 @@ app.get('/qs', function(req, res) {
 });
 
 app.get('/slow', function() {});
+
+app.post('/send-form', function(req, res) {
+  res.send(JSON.stringify(req.body));
+});
 
 /**
  * Primary export.

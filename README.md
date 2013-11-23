@@ -23,6 +23,7 @@ api()
 
 .xml()
 .data({ foo: 'bar' })
+
 .auth({ user: 'foo', pass: '123' })
 .pipe(stream)
 .cookie()
