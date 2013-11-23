@@ -22,8 +22,7 @@ global.should = chai.should();
  */
 
 global.api = function() {
-  return hippie()
-    .base('http://localhost:' + server.PORT);
+  return hippie().base('http://localhost:' + server.PORT);
 };
 
 /**
