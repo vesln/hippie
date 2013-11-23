@@ -1,7 +1,7 @@
 {
   "name": "hippie",
   "version": "0.0.0",
-  "description": "",
+  "description": "Simple end-to-end API testing",
   "main": "./lib/hippie.js",
   "homepage": "https://github.com/vesln/hippie",
   "scripts": {

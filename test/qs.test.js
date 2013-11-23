@@ -1,6 +1,7 @@
 describe('#qs', function() {
   it('sets a query string', function(done) {
     var qs = { foo: 'bar', baz: 'boo' };
+
     api()
     .get('/qs')
     .qs(qs)

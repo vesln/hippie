@@ -8,9 +8,16 @@
 
 ## Synopsis
 
-Elegant end-to-end testing for web APIs.
+Thin request wrapper that enables powerful and intuitive API testing.
 
 ## Features
+
+* Intuitive and consistent API
+* Built-in expectations
+* Support for custom parsers and serializers
+* Easy to extend
+* Middlewares
+* Works great with any test runner
 
 ### How it looks
 
@@ -20,10 +27,6 @@ var api = require('hippie');
 api()
 
 .use(function(next {})
-
-.auth({ user: 'foo', pass: '123' })
-.pipe(stream)
-.cookie()
 
 .parser(function(data) {
   return data;
@@ -37,7 +40,7 @@ api()
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
 .expectStatus(200)
 
-.expect(function(res, next) {
+.expect(function(res, body, next) {
   // assert stuff
   next(err);
 })
