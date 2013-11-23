@@ -4,6 +4,10 @@
 
 var express = require('express');
 
+/**
+ * Server.
+ */
+
 var app = express();
 
 app.all('/method', function(req, res) {
@@ -20,12 +24,16 @@ app.get('/qs', function(req, res) {
 
 app.get('/slow', function() {});
 
-app.post('/send-form', [express.urlencoded()], function(req, res) {
+app.post('/send-form', express.urlencoded(), function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
-app.post('/send-json', [express.json()], function(req, res) {
+app.post('/send-json', express.json(), function(req, res) {
   res.send(JSON.stringify(req.body));
+});
+
+app.get('/auth', express.basicAuth('user', 'pass'), function(req, res) {
+  res.send('ok');
 });
 
 /**
