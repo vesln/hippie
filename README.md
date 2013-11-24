@@ -25,10 +25,6 @@ var api = require('hippie');
 
 api()
 
-.expectBody(/foo/)
-.expectBody({ foo: 'bar' })
-.expectBody('foo')
-
 .expect(function(res, body, next) {
   // assert stuff
   next(err);
