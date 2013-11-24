@@ -18,18 +18,73 @@ Thin request wrapper that enables powerful and intuitive API testing.
 * Middlewares
 * Works great with any test runner
 
-### How it looks
+## Examples
 
-```js
-var api = require('hippie');
+### Hello world
 
-api()
+### Expectations
 
-.expect(function(res, body, next) {
-  // assert stuff
-  next(err);
-})
-```
+### Middlewares
+
+### Serializers and parsers
+
+### Authentication
+
+### DRY
+
+## API
+
+### #timeout
+
+### #qs
+
+### #base
+
+### #url
+
+### #header
+
+### #header
+
+### #method
+
+### #json
+
+### #form
+
+### #serializer
+
+### #parser
+
+### #send
+
+### #auth
+
+### #use
+
+### #expect
+
+### #expectStatusCode
+
+### #expectHeader
+
+### #expectValue
+
+### #expectBody
+
+### #get
+
+### #post
+
+### #delete
+
+### #put
+
+### #head
+
+### #patch
+
+### #end
 
 ## Installation
 
