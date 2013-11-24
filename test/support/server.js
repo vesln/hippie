@@ -36,6 +36,10 @@ app.get('/auth', express.basicAuth('user', 'pass'), function(req, res) {
   res.send('ok');
 });
 
+app.get('/list', function(req, res) {
+  res.json([{ id: 4 }]);
+});
+
 /**
  * Primary export.
  */

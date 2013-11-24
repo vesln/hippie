@@ -27,6 +27,7 @@
   "dependencies": {
     "assertion-error": "~1.0.0",
     "request": "~2.27.0",
-    "qs": "~0.6.5"
+    "qs": "~0.6.5",
+    "pathval": "0.0.1"
   }
 }

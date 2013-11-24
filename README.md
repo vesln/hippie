@@ -30,8 +30,6 @@ api()
 .expectBody({ foo: 'bar' })
 .expectBody('foo')
 
-.expectKey('users.0.id', 1)
-
 .expect(function(res, body, next) {
   // assert stuff
   next(err);
