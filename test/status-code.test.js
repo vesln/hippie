@@ -8,6 +8,12 @@ describe('#expectStatusCode', function() {
     });
   });
 
+  it('does not return an error when the expected status code matches the actual', function(done) {
+    api()
+    .expectStatusCode(200)
+    .get('/method', done);
+  });
+
   it('has aliases', function() {
     var client = api();
     client.expectStatusCode.should.eq(client.expectStatus);

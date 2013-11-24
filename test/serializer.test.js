@@ -8,4 +8,11 @@ describe('#serializer', function() {
     .send({ foo: 'bar' })
     .post('/send-json', done);
   });
+
+  it('has a default serializer', function(done) {
+    api()
+    .header('Content-Type', 'application/json')
+    .send('{ "foo": "bar" }')
+    .post('/send-json', done);
+  });
 });

@@ -28,4 +28,14 @@ describe('#json', function() {
     .post('/send-json')
     .end(done);
   });
+
+  it('returns an error when the returned json is invalid', function(done) {
+    api()
+    .json()
+    .post('/invalid')
+    .end(function(err) {
+      err.should.be.ok;
+      done();
+    });
+  });
 });
