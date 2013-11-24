@@ -33,10 +33,6 @@ api()
   // assert stuff
   next(err);
 })
-
-.end(function(err, res) {
-  // win!
-});
 ```
 
 ## Installation
