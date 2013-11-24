@@ -3,7 +3,7 @@ var hippie = require('..');
 describe('#end', function() {
   it('returns connection errors', function(done) {
     hippie()
-    .get('http://invalid.z', function(err) {
+    .get('http://invalid.vesln.com', function(err) {
       err.should.be.ok;
       done();
     });
