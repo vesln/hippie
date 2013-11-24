@@ -3,7 +3,6 @@
 [![Coverage Status](https://coveralls.io/repos/vesln/hippie/badge.png?branch=master)](https://coveralls.io/r/vesln/hippie?branch=master)
 [![Code Climate](https://codeclimate.com/github/vesln/hippie.png)](https://codeclimate.com/github/vesln/hippie)
 
-
 ![hippie](http://i.imgur.com/ZEkuNZG.png)
 
 ## Synopsis
