@@ -31,7 +31,6 @@ api()
 .expectBody('foo')
 
 .expectKey('users.0.id', 1)
-.expectHeader('Content-Type', 'application/json; charset=utf-8')
 
 .expect(function(res, body, next) {
   // assert stuff
