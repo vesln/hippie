@@ -27,7 +27,7 @@ var api = require('hippie');
 ### Hello world
 
 ```js
-api()
+hippie()
 .json()
 .get('https://api.github.com/users/vesln')
 .expectStatus(200)
@@ -39,7 +39,7 @@ api()
 ### Expectations
 
 ```js
-api()
+hippie()
 .json()
 .base('http://localhost:1234')
 .get('/users/vesln')
@@ -64,7 +64,7 @@ api()
 ### Middlewares
 
 ```js
-api()
+hippie()
 .json()
 .use(function(options, next) {
   // modify the options for `request` here
@@ -81,7 +81,7 @@ api()
 ```js
 var xml = require('my-xml-library');
 
-api()
+hippie()
 .serializer(function(params, fn) {
   var err = new Error('Things went wrong');
   var res = xml.objectToXml(params);
@@ -293,7 +293,7 @@ hippie()
 Register a middleware that will be executed before the HTTP request.
 
 ```js
-api()
+hippie()
 .json()
 .use(function(options, next) {
   // modify the options for `request` here
@@ -304,29 +304,123 @@ api()
 .end(fn);
 ```
 
-### #get
+### #get, #del, #post, #put, #patch, #head
 
-### #post
+Helper method for:
 
-### #del
+- Method: `method`
+- URL: `url`
+- End: `fn` [optional]
 
-### #put
+```js
+hippie()
+.get('https://api.github.com/users/vesln')
+.end(fn);
+```
 
-### #head
+Or if you want to execute the test immediately:
 
-### #patch
-
-### #expect
+```js
+hippie()
+.get('https://api.github.com/users/vesln', fn);
+```
 
 ### #expectStatusCode, #expectStatus, #expectCode
 
+Set a response status code expectation.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectStatus(200)
+.end(fn);
+```
+
 ### #expectHeader
+
+Set a response header expectation.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectHeader('Content-Type', 'application/json; charset=utf-8')
+.expectHeader('X-API-LIMIT', 3)
+.end(fn);
+```
 
 ### #expectValue
 
+Register a string path expectation.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectValue('details.company', 'Awesome.io')
+.expectValue('repos[0].name', 'hippie')
+.end(fn);
+```
+
+For more information about string paths visit
+[pathval](https://github.com/chaijs/pathval).
+
 ### #expectBody
 
+Strict expectations:
+
+```js
+hippie()
+.get('https://api.github.com/users/vesln')
+.expectBody('{ "username": "vesln" }')
+.end(fn);
+```
+
+Regular expression expectations:
+
+```js
+hippie()
+.get('https://api.github.com/users/vesln')
+.expectBody(/vesln/)
+.end(fn);
+```
+
+Object/array expectations:
+
+```js
+hippie()
+.get('https://api.github.com/users/vesln')
+.expectBody({ username: 'vesln' })
+.end(fn);
+```
+
+### #expect
+
+Register a custom expectation.
+
+```js
+hippie()
+.get('https://api.github.com/users/vesln')
+.expect(function(res, body, next) {
+  var err = assertSomething;
+  next(err);
+})
+.end(fn);
+```
+
 ### #end
+
+Execute the HTTP request and the tests.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectValue('details.company', 'Awesome.io')
+.expectValue('repos[0].name', 'hippie')
+.end(fn);
+```
 
 ## Installation
 
