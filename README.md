@@ -442,6 +442,12 @@ $ npm test
 $ npm run-script coverage
 ```
 
+## Alternative projects
+
+- [supertest](https://github.com/visionmedia/supertest)
+- [APIeasy](https://github.com/flatiron/api-easy)
+- [chai-http](https://github.com/chaijs/chai-http)
+
 ## License
 
 (The MIT License)
