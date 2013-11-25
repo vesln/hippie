@@ -110,9 +110,37 @@ hippie.assert.showDiff = true;
 
 ![showDiff](http://i.imgur.com/hsR8Kbs.png)
 
-### Authentication
-
 ### DRY
+
+Since most of the time your test setup is going to be the same, you can simply
+create a helper function for your tests that will take care of the repetitive
+setup:
+
+```js
+var hippie = require('hippie');
+
+function api() {
+  return hippie()
+    .json()
+    .serializer(customSerializer)
+    .parser(customParser)
+    .use(somethingSpecial)
+    .base('http://localhost:3000/api/v1')
+    .auth('user', 'pass')
+    .expect(somethingRepetable);
+}
+```
+Later on:
+
+```js
+test('my awesome api', function(done) {
+  api()
+  .get('/users')
+  .expectStatus(200)
+  .end();
+});
+
+```
 
 ## API
 
