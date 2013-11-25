@@ -27,18 +27,39 @@ var api = require('hippie');
 ### Hello world
 
 ```js
-
 api()
 .json()
 .get('https://api.github.com/users/vesln')
 .expectStatus(200)
-.expectValue('login', 'vesln')
 .end(function(err, res, body) {
   if (err) throw err;
 });
 ```
 
 ### Expectations
+
+```js
+api()
+.json()
+.base('http://localhost:1234')
+.get('/users/vesln')
+.expectStatus(200)
+.expectHeader('Content-Type', 'application/json; charset=utf-8')
+.expectValue('username', 'vesln')
+.expectValue('repos[0].name', 'jsmd')
+.expectBody({
+  username: 'vesln',
+  repos: [
+    { name: 'jsmd' },
+    { name: 'hippie' },
+  ]
+})
+.expectBody(/vesln/g)
+.end(function(err, res, body) {
+  if (err) throw err;
+  process.exit(0);
+});
+```
 
 ### Middlewares
 
@@ -47,6 +68,8 @@ api()
 ### Authentication
 
 ### DRY
+
+### Enable showDiff
 
 ## API
 

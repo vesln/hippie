@@ -1,5 +1,4 @@
 var api = require('../');
-var assert = require('assert');
 
 api()
 .json()
