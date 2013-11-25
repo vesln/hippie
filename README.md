@@ -139,42 +139,176 @@ test('my awesome api', function(done) {
   .expectStatus(200)
   .end();
 });
-
 ```
 
 ## API
 
 ### #timeout
 
+Configure a timeout for the HTTP request.
+
+```js
+hippie()
+.timeout(1000)
+.end(fn);
+```
+
 ### #qs
+
+Convert an object to query string values:
+
+```js
+hippie()
+.qs({ foo: 'bar' })
+.end(fn);
+```
 
 ### #base
 
+Configure a base URL, useful when testing the same API endpoint.
+
+```js
+hippie()
+.base('https://api.github.com')
+.get('/users/vesln')
+.end(fn);
+```
+
 ### #url
 
-### #header
+Set the URL for the HTTP request. Used internally by `get`, `put` etc. and
+it should be used in combination with `method`.
+
+```js
+hippie()
+.url('https://api.github.com')
+.method('GET')
+.end(fn);
+```
 
 ### #method
 
+Configure the HTTP method. Used internally by `get`, `put` etc.
+
+```js
+hippie()
+.url('https://api.github.com')
+.method('OPTIONS')
+.end(fn);
+```
+
+### #header
+
+Set a request header.
+
+```js
+hippie()
+.header('Content-Type', 'application/json')
+.send({ some: 'data' })
+.end(fn);
+```
+
 ### #json
+
+Helper method for:
+
+- Content-Type: application/json
+- Accept: application/json
+- Serializer: json
+- Parser: json
+
+```js
+hippie()
+.json()
+.get('https://github.com/vesln.json', fn);
+```
 
 ### #form
 
+Helper method for:
+
+- Content-Type: application/x-www-form-urlencoded
+- Serializer: urlencoded
+
+```js
+hippie()
+.form()
+.patch('https://api.mindbloom.com/users/vesln');
+.send({ timezone: 'UTC' }
+.end();
+```
+
 ### #serializer
+
+Configure a request body serializer.
+
+```js
+hippie()
+.serializer(function(params, fn) {
+  var err = new Error('Things went wrong');
+  var res = xml.objectToXml(params);
+  fn(err, res);
+});
+```
 
 ### #parser
 
+Configure a response body parser.
+
+```js
+hippie()
+.parser(function(body, fn) {
+  var err = new Error('Things went wrong');
+  var res = xml.xmlToObject(body);
+  fn(err, res);
+});
+```
+
 ### #send
+
+Set request body.
+
+```js
+hippie()
+.json()
+.patch('https://api.mindbloom.com/users/vesln');
+.send({ timezone: 'UTC' }
+.end();
+```
 
 ### #auth
 
+Set Basic Auth credentials.
+
+```js
+hippie()
+.auth('user', 'password')
+.patch('https://api.mindbloom.com/users/vesln');
+.send({ timezone: 'UTC' }
+.end();
+```
+
 ### #use
+
+Register a middleware that will be executed before the HTTP request.
+
+```js
+api()
+.json()
+.use(function(options, next) {
+  // modify the options for `request` here
+  // do other suff
+  next(options);
+})
+.get('https://api.github.com/users/vesln')
+.end(fn);
+```
 
 ### #get
 
 ### #post
 
-### #delete
+### #del
 
 ### #put
 
@@ -184,7 +318,7 @@ test('my awesome api', function(done) {
 
 ### #expect
 
-### #expectStatusCode
+### #expectStatusCode, #expectStatus, #expectCode
 
 ### #expectHeader
 
