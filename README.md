@@ -63,13 +63,56 @@ api()
 
 ### Middlewares
 
+```js
+api()
+.json()
+.use(function(options, next) {
+  // modify the options for `request` here
+  next(options);
+})
+.get('https://api.github.com/users/vesln')
+.end(function(err, res, body) {
+  if (err) throw err;
+});
+```
+
 ### Serializers and parsers
+
+```js
+var xml = require('my-xml-library');
+
+api()
+.serializer(function(params, fn) {
+  var err = new Error('Things went wrong');
+  var res = xml.objectToXml(params);
+  fn(err, res);
+})
+.parser(function(body, fn) {
+  var err = new Error('Things went wrong');
+  var res = xml.xmlToObject(body);
+  fn(err, res);
+})
+.get('https://api.github.com/users/vesln.xml')
+.expectStatus(200)
+.end(function(err, res, body) {
+  if (err) throw err;
+});
+```
+
+### AssertionError configurations
+
+Similar to Chai.js and other frameworks, you can enable `showDiff`.
+
+```js
+var hippie = require('hippie');
+hippie.assert.showDiff = true;
+```
+
+![showDiff](http://i.imgur.com/hsR8Kbs.png)
 
 ### Authentication
 
 ### DRY
-
-### Enable showDiff
 
 ## API
 
