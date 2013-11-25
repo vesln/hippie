@@ -40,6 +40,10 @@ app.get('/list', function(req, res) {
   res.json([{ id: 4 }]);
 });
 
+app.get('/user', function(req, res) {
+  res.json({ id: 4 });
+});
+
 /**
  * Primary export.
  */

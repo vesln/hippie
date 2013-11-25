@@ -37,12 +37,12 @@ describe('#expectBody', function() {
     });
   });
 
-  describe('with objects and arrays', function() {
+  describe('with arrays', function() {
     it('does not return an error when the expectation is fulfilled', function(done) {
       api()
       .json()
       .get('/list')
-      .expectBody([ { id: 4 }])
+      .expectBody([{ id: 4 }])
       .end(done);
     });
 
@@ -50,7 +50,28 @@ describe('#expectBody', function() {
       api()
       .json()
       .get('/list')
-      .expectBody([ { id: 5 }])
+      .expectBody([{ id: 5 }])
+      .end(function(err) {
+        err.should.be.ok;
+        done();
+      });
+    });
+  });
+
+  describe('with objects', function() {
+    it('does not return an error when the expectation is fulfilled', function(done) {
+      api()
+      .json()
+      .get('/user')
+      .expectBody({ id: 4 })
+      .end(done);
+    });
+
+    it('returns an error when the expectation is not fulfilled', function(done) {
+      api()
+      .json()
+      .get('/list')
+      .expectBody({ id: 5 })
       .end(function(err) {
         err.should.be.ok;
         done();
