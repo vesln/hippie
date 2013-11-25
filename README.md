@@ -20,7 +20,23 @@ Thin request wrapper that enables powerful and intuitive API testing.
 
 ## Examples
 
+```
+var api = require('hippie');
+```
+
 ### Hello world
+
+```js
+
+api()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectStatus(200)
+.expectValue('login', 'vesln')
+.end(function(err, res, body) {
+  if (err) throw err;
+});
+```
 
 ### Expectations
 
@@ -44,8 +60,6 @@ Thin request wrapper that enables powerful and intuitive API testing.
 
 ### #header
 
-### #header
-
 ### #method
 
 ### #json
@@ -62,16 +76,6 @@ Thin request wrapper that enables powerful and intuitive API testing.
 
 ### #use
 
-### #expect
-
-### #expectStatusCode
-
-### #expectHeader
-
-### #expectValue
-
-### #expectBody
-
 ### #get
 
 ### #post
@@ -83,6 +87,16 @@ Thin request wrapper that enables powerful and intuitive API testing.
 ### #head
 
 ### #patch
+
+### #expect
+
+### #expectStatusCode
+
+### #expectHeader
+
+### #expectValue
+
+### #expectBody
 
 ### #end
 

@@ -3,7 +3,7 @@ describe('#expect', function() {
     var called = false;
 
     api()
-    .expect(function(err, res, body, next) {
+    .expect(function(res, body, next) {
       called = true;
       next();
     })
