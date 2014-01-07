@@ -7,7 +7,11 @@ describe('#send', function() {
     .send(data)
     .post('/send-form')
     .end(function(err, res) {
-      res.body.should.eq(JSON.stringify(data));
+      var body = JSON.parse(res.body);
+
+      should.not.exist(err);
+      body.foo.should.eq(data.foo);
+
       done();
     });
   });

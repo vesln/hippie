@@ -6,8 +6,12 @@ describe('#qs', function() {
     .get('/qs')
     .qs(qs)
     .end(function(err, res) {
+      var body = JSON.parse(res.body);
+
       should.not.exist(err);
-      res.body.should.eq(JSON.stringify(qs));
+      body.foo.should.eq(qs.foo);
+      body.baz.should.eq(qs.baz);
+
       done();
     });
   });

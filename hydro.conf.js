@@ -32,8 +32,7 @@ module.exports = function(hydro) {
     formatter: 'hydro-dot',
     chai: {
       styles: 'should',
-      showDiff: true,
-      includeStack: true
+      stack: true
     },
     globals: {
       api: api

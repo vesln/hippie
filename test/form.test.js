@@ -16,7 +16,11 @@ describe('#form', function() {
     .post('/send-form')
     .send(data)
     .end(function(err, res) {
-      res.body.should.eq(JSON.stringify(data));
+      var body = JSON.parse(res.body);
+
+      should.not.exist(err);
+      body.foo.should.eq(data.foo);
+
       done();
     });
   });
