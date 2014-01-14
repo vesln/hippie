@@ -32,7 +32,7 @@ app.post('/send-json', express.json(), function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
-app.get('/empty-response', express.json(), function(req, res) {
+app.get('/empty-response', function(req, res) {
   res.send(204);
 });
 
