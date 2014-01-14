@@ -38,4 +38,12 @@ describe('#json', function() {
       done();
     });
   });
+
+  it('returns no error if the response is empty', function(done) {
+    api()
+      .json()
+      .get('/empty-response')
+      .expectStatus(204)
+      .end(done);
+  });
 });

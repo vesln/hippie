@@ -32,6 +32,10 @@ app.post('/send-json', express.json(), function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
+app.get('/empty-response', express.json(), function(req, res) {
+  res.send(204);
+});
+
 app.get('/auth', express.basicAuth('user', 'pass'), function(req, res) {
   res.send('ok');
 });
