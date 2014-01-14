@@ -39,7 +39,7 @@ describe('#json', function() {
     });
   });
 
-  it('returns no error if the response is empty', function(done) {
+  it('works fine if the response is empty', function(done) {
     api()
       .json()
       .get('/empty-response')
