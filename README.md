@@ -422,6 +422,26 @@ hippie()
 .end(fn);
 ```
 
+### #app
+
+Fire up an HTTP app and set its address as a base URL.
+Also works with HTTP handler functions `function(req res){}`.
+
+```js
+hippie(expressApp)
+.get('/')
+.end(fn);
+```
+
+```js
+hippie()
+.app(function(req, res) {
+  res.end('Bye');
+})
+.get('/')
+.end(fn);
+```
+
 ## Installation
 
 ```bash
