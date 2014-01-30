@@ -75,6 +75,20 @@ hippie()
   if (err) throw err;
 });
 ```
+With middlewares you can modify the options passed to `request`. Here is an
+example how you could persist the cookies across multiple requests:
+
+```js
+hippie(app)
+.get('/')
+.use(persistCookies)
+.end(function() {});
+
+function persistCookies(opts, next) {
+  opts.jar = true;
+  next(opts);
+}
+```
 
 ### Serializers and parsers
 
