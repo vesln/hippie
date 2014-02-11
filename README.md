@@ -28,6 +28,7 @@ var api = require('hippie');
 
 ```js
 hippie()
+.header("User-Agent", "hippie")
 .json()
 .get('https://api.github.com/users/vesln')
 .expectStatus(200)
