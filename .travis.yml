@@ -4,4 +4,4 @@ node_js:
   - 0.10
   - 0.11
 script:
-  - npm test && npm run-script coveralls
+  - npm test

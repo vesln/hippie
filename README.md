@@ -1,6 +1,5 @@
 [![NPM version](https://badge.fury.io/js/hippie.png)](http://badge.fury.io/js/hippie)
 [![Build Status](https://secure.travis-ci.org/vesln/hippie.png)](http://travis-ci.org/vesln/hippie)
-[![Coverage Status](https://coveralls.io/repos/vesln/hippie/badge.png?branch=master)](https://coveralls.io/r/vesln/hippie?branch=master)
 [![Code Climate](https://codeclimate.com/github/vesln/hippie.png)](https://codeclimate.com/github/vesln/hippie)
 
 ![hippie](http://i.imgur.com/ZEkuNZG.png)
