@@ -1,4 +1,4 @@
-describe('multile expectations', function() {
+describe('multiple expectations', function() {
   it('works as expected', function(done) {
     api()
     .json()
