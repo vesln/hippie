@@ -36,6 +36,10 @@ app.get('/empty-response', function(req, res) {
   res.send(204);
 });
 
+app.get('/redirect', function(req, res) {
+  res.redirect('/list');
+});
+
 app.get('/auth', express.basicAuth('user', 'pass'), function(req, res) {
   res.send('ok');
 });
