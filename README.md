@@ -247,7 +247,7 @@ Helper method for:
 ```js
 hippie()
 .form()
-.patch('https://api.mindbloom.com/users/vesln');
+.patch('https://api.mindbloom.com/users/vesln')
 .send({ timezone: 'UTC' }
 .end();
 ```
@@ -297,7 +297,7 @@ Set Basic Auth credentials.
 ```js
 hippie()
 .auth('user', 'password')
-.patch('https://api.mindbloom.com/users/vesln');
+.patch('https://api.mindbloom.com/users/vesln')
 .send({ timezone: 'UTC' }
 .end();
 ```
