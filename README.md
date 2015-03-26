@@ -481,6 +481,7 @@ $ npm run-script coverage
 - [supertest](https://github.com/visionmedia/supertest)
 - [APIeasy](https://github.com/flatiron/api-easy)
 - [chai-http](https://github.com/chaijs/chai-http)
+- [frisby](https://github.com/vlucas/frisby)
 
 ## License
 
