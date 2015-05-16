@@ -318,6 +318,25 @@ hippie()
 .end(fn);
 ```
 
+For example, you can provide a client certificate with your request like so:
+
+```js
+var fs = require('fs');
+hippie()
+ .json()
+ .use(function(options, next) {
+  options.agentOptions = {
+   cert: fs.readFileSync('client.crt'),
+   key: fs.readFileSync('client.key')
+  };
+  // Assuming you self-signed the CA
+  options.strictSSL = false;
+  next(options);
+ })
+ .get('https://localhost:8080/api/some-api-url')
+ .end(fn);
+```
+
 ### #get, #del, #post, #put, #patch, #head
 
 Helper method for:
