@@ -167,6 +167,18 @@ hippie()
 .end(fn);
 ```
 
+### #time
+
+Configure response time logging for the HTTP request.
+
+```js
+hippie()
+.time(true)
+.end(function(err, res, body) {
+  console.log('Response elapsed time: ', res.elapsedTime);
+});
+```
+
 ### #qs
 
 Convert an object to query string values:
