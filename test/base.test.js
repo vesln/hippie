@@ -12,4 +12,13 @@ describe('#base', function() {
       done();
     });
   });
+
+  it('uses the base url by default', function(done) {
+    api()
+    .end(function(err, res) {
+      res.request.uri.href.should.eq('http://localhost:' + server.PORT + '/');
+      should.not.exist(err);
+      done();
+    });
+  });
 });
