@@ -141,7 +141,7 @@ function api() {
     .use(somethingSpecial)
     .base('http://localhost:3000/api/v1')
     .auth('user', 'pass')
-    .expect(somethingRepetable);
+    .expect(somethingRepeatable);
 }
 ```
 Later on:
