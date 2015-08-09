@@ -1,4 +1,16 @@
 
+0.4.0 / 2015-08-09
+==================
+
+  * Nuke node 0.8 support
+  * fixing spelling of Repeatable in README
+  * Fix url defaulting to undefined
+  * Use response elapse time for logging purpose
+  * Added example for client certificate requests to README
+  * Add frisby as alternative project
+  * Fixed syntax errors in README examples
+
+
 0.3.0 / 2014-03-24
 ==================
 
