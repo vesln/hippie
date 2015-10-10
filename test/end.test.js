@@ -35,4 +35,26 @@ describe('#end', function() {
       done();
     });
   });
+
+  describe('when no callback is provided', function() {
+    it('returns a promise', function(done) {
+      api()
+      .get('/method')
+      .end()
+      .then( function(res) {
+        res.body.should.eq('GET');
+        done();
+      }).catch(done);
+    });
+
+    it('returns a promise that catches request errors', function(done) {
+      hippie()
+      .get('http://invalid.vesln.com')
+      .end()
+      .catch(function(err) {
+        err.should.be.ok;
+        done();
+      });
+    });
+  });
 });
