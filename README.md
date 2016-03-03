@@ -467,6 +467,23 @@ hippie()
 .end(fn);
 ```
 
+When no callback is provided, ```end()``` returns a promise.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectValue('details.company', 'Awesome.io')
+.expectValue('repos[0].name', 'hippie')
+.end()
+.then(function(res) {
+  console.log(res);
+})
+.catch(function(err) {
+  console.error(err);
+});
+```
+
 ### #app
 
 Fire up an HTTP app and set its address as a base URL.
