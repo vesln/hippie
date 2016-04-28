@@ -45,6 +45,7 @@ hippie()
 .get('/users/vesln')
 .expectStatus(200)
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
+.expectKey('username')
 .expectValue('username', 'vesln')
 .expectValue('repos[0].name', 'jsmd')
 .expectBody({
@@ -405,6 +406,22 @@ hippie()
 .get('https://api.github.com/users/vesln')
 .expectValue('details.company', 'Awesome.io')
 .expectValue('repos[0].name', 'hippie')
+.end(fn);
+```
+
+For more information about string paths visit
+[pathval](https://github.com/chaijs/pathval).
+
+### #expectKey
+
+Register a string path expectation for a given key.
+
+```js
+hippie()
+.json()
+.get('https://api.github.com/users/vesln')
+.expectKey('details.company')
+.expectKey('repos[0].name')
 .end(fn);
 ```
 

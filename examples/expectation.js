@@ -10,6 +10,7 @@ api()
 .expectStatus(200)
 .expectHeader('Content-Type', 'application/json; charset=utf-8')
 .expectValue('username', 'vesln')
+.expectKey('repos')
 .expectValue('repos[0].name', 'jsmd')
 .expectBody({
   username: 'vesln',

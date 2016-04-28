@@ -48,6 +48,10 @@ app.get('/list', function(req, res) {
   res.json([{ id: 4 }]);
 });
 
+app.get('/keys', function(req, res) {
+  res.json({ hippie: 'cool', blank: '', nullable: null, boolean: false });
+});
+
 app.get('/user', function(req, res) {
   res.json({ id: 4 });
 });
