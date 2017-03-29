@@ -3,6 +3,8 @@
  */
 
 var express = require('express');
+var basicAuth = require('basic-auth-connect');
+var bodyParser = require('body-parser');
 
 /**
  * Server.
@@ -24,23 +26,23 @@ app.get('/qs', function(req, res) {
 
 app.get('/slow', function() {});
 
-app.post('/send-form', express.urlencoded(), function(req, res) {
+app.post('/send-form', bodyParser.urlencoded({ extended: false }), function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
-app.post('/send-json', express.json(), function(req, res) {
+app.post('/send-json', bodyParser.json(), function(req, res) {
   res.send(JSON.stringify(req.body));
 });
 
 app.get('/empty-response', function(req, res) {
-  res.send(204);
+  res.sendStatus(204);
 });
 
 app.get('/redirect', function(req, res) {
   res.redirect('/list');
 });
 
-app.get('/auth', express.basicAuth('user', 'pass'), function(req, res) {
+app.get('/auth', basicAuth('user', 'pass'), function(req, res) {
   res.send('ok');
 });
 
