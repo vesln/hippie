@@ -14,15 +14,17 @@
     "url": "https://github.com/vesln/hippie"
   },
   "devDependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.17.1",
     "chai": "~3.5.0",
-    "jshint": "~2.9.4",
-    "istanbul": "~0.4.5",
-    "express": "~3.4.4",
+    "express": "~4.15.2",
     "hydro": "~0.10.1",
     "hydro-bdd": "~0.2.0",
-    "hydro-dot": "~2.0.1",
+    "hydro-chai": "~0.3.1",
     "hydro-clean-stacks": "~0.2.0",
-    "hydro-chai": "~0.3.1"
+    "hydro-dot": "~2.0.1",
+    "istanbul": "~0.4.5",
+    "jshint": "~2.9.4"
   },
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT",
