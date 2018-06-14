@@ -15,14 +15,13 @@
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "jshint": "~2.3.0",
-    "istanbul": "~0.1.44",
     "express": "~3.4.4",
     "hydro": "~0.8.7",
     "hydro-bdd": "~0.1.0",
-    "hydro-dot": "~1.0.5",
+    "hydro-chai": "~0.1.3",
     "hydro-clean-stacks": "~0.1.0",
-    "hydro-chai": "~0.1.3"
+    "hydro-dot": "~1.0.5",
+    "jshint": "~2.3.0"
   },
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT",
@@ -31,7 +30,7 @@
     "deep-eql": "~0.1.3",
     "es6-promise": "^3.0.2",
     "pathval": "0.0.1",
-    "qs": "~0.6.5",
+    "qs": "~6.5.1",
     "request": "~2.74.0"
   }
 }
