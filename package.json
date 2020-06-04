@@ -18,13 +18,13 @@
     "body-parser": "^1.17.1",
     "chai": "~4.1.2",
     "express": "~4.16.3",
-    "hydro": "~0.10.1",
+    "hydro": "^0.10.1",
     "hydro-bdd": "~0.2.0",
     "hydro-chai": "~0.3.1",
     "hydro-clean-stacks": "~0.2.0",
-    "hydro-dot": "~2.0.1",
-    "istanbul": "~0.4.5",
-    "jshint": "~2.9.5"
+    "hydro-dot": "^2.0.1",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.11.1"
   },
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT",
