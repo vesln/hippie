@@ -1,11 +1,21 @@
+0.6.0 / 2020-07-08
+==================
+
+  * Added option to pass multiple headers
+  * Updated packages to reduce vulnerabilities
+
+
 0.5.2 / 2018-06-14
 ==================
+
   * Removed some insecure dependencies
+
 
 0.5.0 / 2016-03-19
 ==================
 
   * Add promise support
+
 
 0.4.0 / 2015-08-09
 ==================
