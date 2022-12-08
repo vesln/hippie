@@ -17,7 +17,7 @@
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.17.1",
     "chai": "~4.1.2",
-    "express": "~4.16.3",
+    "express": "~4.17.3",
     "hydro": "^0.10.1",
     "hydro-bdd": "~0.2.0",
     "hydro-chai": "~0.3.1",
